@@ -6,3 +6,7 @@ body {
 	background-image: url("../imgs/bg.png");
 	/* cc: https://www.digitalocean.com/community/projects */
 }
+
+.page-header {
+    margin: 10px 0 20px;
+}
