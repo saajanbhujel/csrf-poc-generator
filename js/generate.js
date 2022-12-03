@@ -62,9 +62,9 @@ function generateForm(requirements, parameters, parametersKey, parametersValue) 
 	form += "\t\t\t<input type=\"submit\" value=\"Submit\">\n";
 	form += "\t\t</form>\n";
 	form += "\t\t<script>\n";
-	form += "\t\t\t\tdocument.addEventListener('DOMContentLoaded', function(event) {\n";
-	form += "\t\t\t\t\t\tdocument.createElement('form').submit.call(document.getElementById('yourform'));\n";
-	form += "\t\t\t\t\t\});\n";
+	form += "\t\t\tdocument.addEventListener('DOMContentLoaded', function(event) {\n";
+	form += "\t\t\t\tdocument.createElement('form').submit.call(document.getElementById('yourform'));\n";
+	form += "\t\t\t\t});\n";
 	form += "\t\t</script>\n";
 	form += "\t</body>\n";
 	form += "<html>\n";
