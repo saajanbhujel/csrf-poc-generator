@@ -69,9 +69,9 @@ body {
 }
 #poc, #highlighting, #highlighting * {
   /* Also add text styles to highlighing tokens */
-  font-size: 15pt;
-  font-family: monospace;
-  line-height: 20pt;
+  font-size: inherit; /*15pt;*/
+  font-family: inherit /*monospace;*/
+  line-height: inherit /*20pt;*/
   tab-size: 2;
 }
 
@@ -97,8 +97,8 @@ body {
 /* Make textarea almost completely transparent */
 
 #poc {
-  color: transparent;
-  background: transparent;
+  color: transparent !important;
+  background: transparent !important;
   caret-color: white; /* Or choose your favourite color */
 }
 
@@ -109,9 +109,9 @@ body {
 }
 
 /* No resize on textarea */
-#poc {
+/*#poc {
   resize: none;
-}
+}*/
 
 /* Syntax Highlighting from prism.js starts below, partly modified: */
 
