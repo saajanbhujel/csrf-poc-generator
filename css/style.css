@@ -10,3 +10,7 @@ body {
 .page-header {
     margin: 10px 0 20px;
 }
+
+.new-container-fluid {
+    padding-bottom: 15px;
+}
