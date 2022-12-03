@@ -20,10 +20,11 @@ $("#generate").click(function() {
 					if($('#httpradio')[0].checked) { 
 						requirements.host = "http://" + headers[i].split(": ")[1];
 					}
-					else if($('#httpradio')[0].checked){
+					else{
 						requirements.host = "https://" + headers[i].split(": ")[1];
 					}
-					else{
+				
+					if($('#checkauto')[2].checked){
 						generateFormValue = true;
 					}
 
