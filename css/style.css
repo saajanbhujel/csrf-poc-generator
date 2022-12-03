@@ -58,6 +58,14 @@ body {
 
 /* text */
 /* Please see the article */
+/*by me custom */
+#highlighting {
+    border: none;
+    /*background-color: white;*/
+    padding: 10px;
+    width: 100%;
+    height: 400px;
+}
 
 #poc, #highlighting {
   /* Both elements need the same text and space styling so they are directly on top of each other */
