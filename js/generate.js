@@ -24,7 +24,7 @@ $("#generate").click(function() {
 						requirements.host = "https://" + headers[i].split(": ")[1];
 					}
 				
-					if($('#checkauto')[2].checked){
+					if($('#checkauto')[0].checked){
 						generateFormValue = true;
 					}
 					else{
