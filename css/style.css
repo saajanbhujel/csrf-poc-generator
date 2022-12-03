@@ -15,13 +15,16 @@ body {
     padding-bottom: 15px;
 }
 
-.github-corner:hover .octo-arm {
+.github-corner {
 	border-bottom: 0;
 	position: fixed;
     	right: 0;
 	text-decoration: none;
 	top: 0;
 	z-index: 1;
+}
+
+.github-corner:hover .octo-arm {
 	animation: octocat-wave 560ms ease-in-out
 }
 
