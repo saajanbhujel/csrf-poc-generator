@@ -54,9 +54,13 @@
 							</h3>
 						</div>
 						<div class="panel-body" style="padding:0">
-							<textarea style="border:none; background-color: white; padding:10px; width:100%; height:400px" placeholder="PoC will be here." id="poc" class="plain__editor" data-el="input"></textarea>
+							<textarea style="border:none; background-color: white; padding:10px; width:100%; height:400px" placeholder="PoC will be here." id="poc" spellcheck="false" oninput="update(this.value); sync_scroll(this);" onscroll="sync_scroll(this);" onkeydown="check_tab(this, event);"></textarea>
 							<!--my test-->
-							<pre aria-hidden="true" class="plain__highlights"><code data-el="highlight" class="markdown"></code></pre>
+							<pre id="highlighting" aria-hidden="true">
+							<code class="language-html" id="highlighting-content">
+							&lt;span title=&quot;Start Typing&quot;&gt;Just start typing!&lt;/span&gt;
+							</code>
+							</pre>
 
 						</div>
 						<div class="panel-footer">
@@ -84,70 +88,43 @@
 			
 		</div>
 	    <script src="js/generate.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
 		<script>
-			const inputEl = document.querySelector('[data-el="input"]');
-			const highlightEl = document.querySelector('[data-el="highlight"]');
-			const outputEl = document.querySelector('[data-el="output"]');
-			
-			const converter = new showdown.Converter({
-				metadata: true,
-  				parseImgDimensions: true,
-  				strikethrough: true,
-				tables: true,
-				ghCodeBlocks: true,
-				smoothLivePreview: true,
-				simpleLineBreaks: true,
-				emoji: true,
-			});
-			
-			const resizeTextarea = (textArea) => {
-				if (!textArea) {
-					return;
+			function update(text) {
+				let result_element = document.querySelector("#highlighting-content");
+				// Handle final newlines (see article)
+				if (text[text.length - 1] == "\n") {
+				text += " ";
 				}
-				
-				window.requestAnimationFrame(() => {
-					textArea.style.height = 0;
-					if (textArea.scrollHeight > 0) {
-						textArea.style.height = `${textArea.scrollHeight + 2}px`;
-					}
-				});
-			};
-			
-			const highlight = () => {
-				window.requestAnimationFrame(() => {
-					const highlighted = hljs.highlight(
-						"markdown",
-						inputEl.value
-					).value;
-					highlightEl.innerHTML = highlighted;
-				});
-			};
-			
-			const updateReadonly = () => {
-				window.requestAnimationFrame(() => {
-					const htmlContent = converter.makeHtml(inputEl.value);
-					outputEl.innerHTML = htmlContent;
-				});
-			};
-			
-			const init = () => {
-				inputEl.addEventListener("input", () => {
-					resizeTextarea(inputEl);
-					highlight();
-					updateReadonly();
-				});
-				
-				inputEl.setAttribute('data-initialized', true);
+				// Update code
+				result_element.innerHTML = text.replace(new RegExp("&", "g"), "&amp;").replace(new RegExp("<", "g"), "&lt;"); /* Global RegExp */
+				// Syntax Highlight
+				Prism.highlightElement(result_element);
 			}
-			
-			document.addEventListener("DOMContentLoaded", () => {
-				init();
-				resizeTextarea(inputEl);
-				highlight();
-				updateReadonly();
-			})
+
+function sync_scroll(element) {
+	/* Scroll result to scroll coords of event - sync with textarea */
+	let result_element = document.querySelector("#highlighting");
+	// Get and set x and y
+	result_element.scrollTop = element.scrollTop;
+	result_element.scrollLeft = element.scrollLeft;
+}
+
+function check_tab(element, event) {
+	let code = element.value;
+	if (event.key == "Tab") {
+		/* Tab key pressed */
+		event.preventDefault(); // stop normal
+		let before_tab = code.slice(0, element.selectionStart); // text before tab
+		let after_tab = code.slice(element.selectionEnd, element.value.length); // text after tab
+		let cursor_pos = element.selectionStart + 1; // where cursor moves after tab - moving forward by 1 char to after tab
+		element.value = before_tab + "\t" + after_tab; // add tab char
+		// move cursor
+		element.selectionStart = cursor_pos;
+		element.selectionEnd = cursor_pos;
+		update(element.value); // Update text to include indent
+	}
+}
 		</script>
   	</body>
 </html>
