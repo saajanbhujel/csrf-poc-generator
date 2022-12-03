@@ -6,6 +6,7 @@ $("#generate").click(function() {
 	var parameters = new Array();
 	var parametersKey = new Array();
 	var parametersValue = new Array();
+	var generateFormValue = false;
 
 	requirements.method = headers[0].split(" ")[0];
 
@@ -58,7 +59,7 @@ $("#generate").click(function() {
 
 function generateForm(requirements, parameters, parametersKey, parametersValue) {
 	
-	if(generateFormValue || false) {
+	if(generateFormValue) {
 		var form = "";
 	
 		form += "<html>\n";
