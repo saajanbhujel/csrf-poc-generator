@@ -75,8 +75,11 @@ body {
   tab-size: 2;
 }
 
+#poc {
+	position: inherit;
+}
 
-#poc, #highlighting {
+#highlighting {
   /* In the same place */
   position: absolute;
   /*top: 0;
