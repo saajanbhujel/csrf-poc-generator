@@ -1,3 +1,5 @@
+var generateFormValue = false;
+
 $("#generate").click(function() {
 	var request = $("#request").val();
 	var headers = request.split("\n\n")[0].split("\n");
@@ -6,7 +8,6 @@ $("#generate").click(function() {
 	var parameters = new Array();
 	var parametersKey = new Array();
 	var parametersValue = new Array();
-	var generateFormValue = false;
 
 	requirements.method = headers[0].split(" ")[0];
 
