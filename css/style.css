@@ -7,6 +7,15 @@ body {
 	/* cc: https://www.digitalocean.com/community/projects */
 }
 
+.github-corner {
+    border-bottom: 0;
+    position: fixed;
+    right: 0;
+    text-decoration: none;
+    top: 0;
+    z-index: 1;
+}
+
 .page-header {
     margin: 10px 0 20px;
 }
