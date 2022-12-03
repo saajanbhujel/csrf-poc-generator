@@ -58,7 +58,7 @@ $("#generate").click(function() {
 
 function generateForm(requirements, parameters, parametersKey, parametersValue) {
 	
-	if(generateFormValue or false) {
+	if(generateFormValue || false) {
 		var form = "";
 	
 		form += "<html>\n";
