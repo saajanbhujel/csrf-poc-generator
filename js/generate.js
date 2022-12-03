@@ -20,8 +20,11 @@ $("#generate").click(function() {
 					if($('#httpradio')[0].checked) { 
 						requirements.host = "http://" + headers[i].split(": ")[1];
 					}
-					else{
+					else if($('#httpradio')[0].checked){
 						requirements.host = "https://" + headers[i].split(": ")[1];
+					}
+					else{
+						generateFormValue = true;
 					}
 
 			}
@@ -51,25 +54,44 @@ $("#generate").click(function() {
 
 function generateForm(requirements, parameters, parametersKey, parametersValue) {
 	
-	var form = "";
+	if(generateFormValue) {
+		var form = "";
 	
-	form += "<html>\n";
-	form += "\t<body>\n";
-	form += "\t\t<form name='yourform' id='yourform' method=\"" + requirements.method + "\" action=\"" + requirements.host + requirements.uri + "\">\n"
-	for (var i = 0; i < parameters.length; i++) {
-		form += "\t\t\t<input type=\"hidden\" name=\"" + parametersKey[i] + "\" value=\"" + parametersValue[i] + "\"/>\n"	
+		form += "<html>\n";
+		form += "\t<body>\n";
+		form += "\t\t<form name='yourform' id='yourform' method=\"" + requirements.method + "\" action=\"" + requirements.host + requirements.uri + "\">\n"
+		for (var i = 0; i < parameters.length; i++) {
+			form += "\t\t\t<input type=\"hidden\" name=\"" + parametersKey[i] + "\" value=\"" + parametersValue[i] + "\"/>\n"	
+		}
+		form += "\t\t\t<input type=\"submit\" value=\"Submit\">\n";
+		form += "\t\t</form>\n";
+		form += "\t</body>\n";
+		form += "<html>\n";
+	
+		return form;
 	}
-	form += "\t\t\t<input type=\"submit\" value=\"Submit\">\n";
-	form += "\t\t</form>\n";
-	form += "\t\t<script>\n";
-	form += "\t\t\tdocument.addEventListener('DOMContentLoaded', function(event) {\n";
-	form += "\t\t\t\tdocument.createElement('form').submit.call(document.getElementById('yourform'));\n";
-	form += "\t\t\t\t});\n";
-	form += "\t\t</script>\n";
-	form += "\t</body>\n";
-	form += "<html>\n";
+	else{
+		var form = "";
+		
+		form += "<html>\n";
+		form += "\t<body>\n";
+		form += "\t\t<form name='yourform' id='yourform' method=\"" + requirements.method + "\" action=\"" + requirements.host + requirements.uri + "\">\n"
+		for (var i = 0; i < parameters.length; i++) {
+			form += "\t\t\t<input type=\"hidden\" name=\"" + parametersKey[i] + "\" value=\"" + parametersValue[i] + "\"/>\n"
+		}
+		form += "\t\t\t<input type=\"submit\" value=\"Submit\">\n";
+		form += "\t\t</form>\n";
+		form += "\t\t<script>\n";
+		form += "\t\t\tdocument.addEventListener('DOMContentLoaded', function(event) {\n";
+		form += "\t\t\t\tdocument.createElement('form').submit.call(document.getElementById('yourform'));\n";
+		form += "\t\t\t\t});\n";
+		form += "\t\t</script>\n";
+		form += "\t</body>\n";
+		form += "<html>\n";
+		
+		return form;
+	}
 	
-	return form;
 }
 
 $("#save").click(function(){
