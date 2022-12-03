@@ -55,12 +55,12 @@ function generateForm(requirements, parameters, parametersKey, parametersValue) 
 	
 	form += "<html>\n";
 	form += "\t<body>\n";
-	form += "\t\t<form name="yourform" id="yourform" method=\"" + requirements.method + "\" action=\"" + requirements.host + requirements.uri + "\">\n"
+	form += "\t\t<form name='yourform' id='yourform' method=\"" + requirements.method + "\" action=\"" + requirements.host + requirements.uri + "\">\n"
 	for (var i = 0; i < parameters.length; i++) {
 		form += "\t\t\t<input type=\"hidden\" name=\"" + parametersKey[i] + "\" value=\"" + parametersValue[i] + "\"/>\n"	
 	}
 	form += "\t\t\t<input type=\"submit\" value=\"Submit\">\n";
-	form += "\t\t</form>\n<script>document.addEventListener("DOMContentLoaded", function(event) {document.createElement('form').submit.call(document.getElementById('yourform'));});</script>";
+	form += "\t\t</form>\n<script>document.addEventListener('DOMContentLoaded', function(event) {document.createElement('form').submit.call(document.getElementById('yourform'));});</script>";
 	form += "\t</body>\n";
 	form += "<html>\n";
 	
