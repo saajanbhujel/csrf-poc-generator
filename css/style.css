@@ -108,7 +108,7 @@ body {
 /* Can be scrolled */
 #poc, #highlighting {
   /*overflow: auto;
-  white-space: nowrap;*. /* Allows textarea to scroll horizontally */
+  white-space: nowrap;*/ /* Allows textarea to scroll horizontally */
 }
 
 /* No resize on textarea */
