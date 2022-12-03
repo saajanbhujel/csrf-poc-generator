@@ -81,7 +81,7 @@ body {
 
 #highlighting {
   /* In the same place */
-  position: absolute;
+  position: inherit;
   /*top: 0;
   left: 0;*/
 }
