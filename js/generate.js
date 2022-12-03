@@ -27,6 +27,9 @@ $("#generate").click(function() {
 					if($('#checkauto')[2].checked){
 						generateFormValue = true;
 					}
+					else{
+						generateFormValue = false;
+					}
 
 			}
 		}
