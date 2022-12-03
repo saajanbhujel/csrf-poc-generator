@@ -76,7 +76,7 @@ body {
 }
 
 #poc {
-	position: inherit;
+	position: absolute;
 }
 
 #highlighting {
