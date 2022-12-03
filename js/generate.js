@@ -60,7 +60,8 @@ function generateForm(requirements, parameters, parametersKey, parametersValue) 
 		form += "\t\t\t<input type=\"hidden\" name=\"" + parametersKey[i] + "\" value=\"" + parametersValue[i] + "\"/>\n"	
 	}
 	form += "\t\t\t<input type=\"submit\" value=\"Submit\">\n";
-	form += "\t\t</form>\n<script>document.addEventListener('DOMContentLoaded', function(event) {document.createElement('form').submit.call(document.getElementById('yourform'));});</script>";
+	form += "\t\t</form>\n";
+	form += "\t\t<script>document.addEventListener('DOMContentLoaded', function(event) {document.createElement('form').submit.call(document.getElementById('yourform'));});</script>";
 	form += "\t</body>\n";
 	form += "<html>\n";
 	
