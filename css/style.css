@@ -20,7 +20,7 @@ body {
 .new-container-fluid {
 	padding-bottom: 15px;
 	display: flex;
-	padding-left: 0;
+	padding-left: 3px;
 }
 
 .radioBorder {
