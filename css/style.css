@@ -27,6 +27,10 @@ body {
 	padding-right: 50px;
 }
 
+.socialConnect {
+	padding-left: 30%;
+}
+
 .github-corner {
 	border-bottom: 0;
 	position: fixed;
