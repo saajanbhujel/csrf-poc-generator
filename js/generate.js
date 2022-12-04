@@ -1,4 +1,4 @@
-var generateFormAuto = false;
+var generateFormAuto = true;
 
 $("#generate").click(function() {
 	var request = $("#request").val();
@@ -26,11 +26,11 @@ $("#generate").click(function() {
 						requirements.host = "https://" + headers[i].split(": ")[1];
 					}
 				
-					if($('#checkauto')[0].checked){
-						generateFormAuto = true;
+					if($('#checkauto')[1].checked){
+						generateFormAuto = false;
 					}
 					else{
-						generateFormAuto = false;
+						generateFormAuto = true;
 					}
 
 			}
@@ -62,22 +62,6 @@ function generateForm(requirements, parameters, parametersKey, parametersValue) 
 	
 	if(generateFormAuto) {
 		var form = "";
-	
-		form += "<html>\n";
-		form += "\t<body>\n";
-		form += "\t\t<form name='myForm' id='myForm' method=\"" + requirements.method + "\" action=\"" + requirements.host + requirements.uri + "\">\n"
-		for (var i = 0; i < parameters.length; i++) {
-			form += "\t\t\t<input type=\"hidden\" name=\"" + parametersKey[i] + "\" value=\"" + parametersValue[i] + "\"/>\n"	
-		}
-		form += "\t\t\t<input type=\"submit\" value=\"Submit\">\n";
-		form += "\t\t</form>\n";
-		form += "\t</body>\n";
-		form += "<html>\n";
-	
-		return form;
-	}
-	else{
-		var form = "";
 		
 		form += "<html>\n";
 		form += "\t<body>\n";
@@ -95,6 +79,22 @@ function generateForm(requirements, parameters, parametersKey, parametersValue) 
 		form += "\t</body>\n";
 		form += "<html>\n";
 		
+		return form;
+	}
+	else{
+		var form = "";
+	
+		form += "<html>\n";
+		form += "\t<body>\n";
+		form += "\t\t<form name='myForm' id='myForm' method=\"" + requirements.method + "\" action=\"" + requirements.host + requirements.uri + "\">\n"
+		for (var i = 0; i < parameters.length; i++) {
+			form += "\t\t\t<input type=\"hidden\" name=\"" + parametersKey[i] + "\" value=\"" + parametersValue[i] + "\"/>\n"	
+		}
+		form += "\t\t\t<input type=\"submit\" value=\"Submit\">\n";
+		form += "\t\t</form>\n";
+		form += "\t</body>\n";
+		form += "<html>\n";
+	
 		return form;
 	}
 	
