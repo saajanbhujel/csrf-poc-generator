@@ -56,7 +56,7 @@ $("#generate").click(function() {
 */
 
 	$("#poc").val(generateForm(requirements, parameters, parametersKey, parametersValue));
-	$("#myDiv").val(generateForm(requirements, parameters, parametersKey, parametersValue));
+	$("#myDiv").text(generateForm(requirements, parameters, parametersKey, parametersValue));
 });
 
 function generateForm(requirements, parameters, parametersKey, parametersValue) {
