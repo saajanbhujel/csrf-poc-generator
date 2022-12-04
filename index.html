@@ -27,10 +27,30 @@
 						<h1>
 							CSRF PoC Generator <small>to save your time..</small>
 						</h1>
-						<div class="socialConnect">
+						<span class="socialConnect">
 							<a href="https://twitter.com/Infos3cNET" target="_blank">Twitter</a>
-						</div>
+						</span>
 					</div>
+				</div>
+			</div>
+			<div class="container-fluid new-container-fluid">
+				<div class="radioBorder">
+					<b>Protocol:-</b>
+					<label class="radio-inline" >
+						<input type="radio" id="httpradio" name="protocol">HTTP
+					</label>
+					<label class="radio-inline">
+						<input type="radio"  id="httpsradio" name="protocol">HTTPS
+					</label>
+				</div>
+				<div class="radioBorder">
+					<b>Auto Submit:-</b>
+					<label class="radio-inline">
+						<input type="radio"  id="checkauto-1" name="dontUseAutoSubmit">On
+					</label>
+					<label class="radio-inline">
+						<input type="radio"  id="checkauto-2" name="dontUseAutoSubmit">Off
+					</label>
 				</div>
 			</div>
 			<div class="row">
@@ -69,27 +89,6 @@
 					</script>
 				</div>
 			</div>
-		</div>
-		<div class="container-fluid new-container-fluid">
-			<div class="radioBorder">
-				<b>Protocol:-</b>
-				<label class="radio-inline" >
-					<input type="radio" id="httpradio" name="protocol">HTTP
-				</label>
-				<label class="radio-inline">
-					<input type="radio"  id="httpsradio" name="protocol">HTTPS
-				</label>
-			</div>
-			<div class="radioBorder">
-				<b>Auto Submit:-</b>
-				<label class="radio-inline">
-					<input type="radio"  id="checkauto-1" name="dontUseAutoSubmit">On
-				</label>
-				<label class="radio-inline">
-					<input type="radio"  id="checkauto-2" name="dontUseAutoSubmit">Off
-				</label>
-			</div>
-			
 		</div>
 	    <script src="js/generate.js"></script>
   	</body>
