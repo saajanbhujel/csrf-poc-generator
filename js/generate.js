@@ -26,11 +26,14 @@ $("#generate").click(function() {
 						requirements.host = "https://" + headers[i].split(": ")[1];
 					}
 				
-					if($('#checkauto')[0].checked){
+					if($('#checkauto-1')[0].checked){
 						generateFormAuto = true;
 					}
-					else{
+					else if($('#checkauto-2')[0].checked){
 						generateFormAuto = false;
+					}
+					else{
+						generateFormAuto = true;
 					}
 
 			}
