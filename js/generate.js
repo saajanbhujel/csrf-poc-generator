@@ -1,4 +1,4 @@
-var generateFormValue = false;
+var generateFormAuto = false;
 
 $("#generate").click(function() {
 	var request = $("#request").val();
@@ -27,10 +27,10 @@ $("#generate").click(function() {
 					}
 				
 					if($('#checkauto')[0].checked){
-						generateFormValue = true;
+						generateFormAuto = true;
 					}
 					else{
-						generateFormValue = false;
+						generateFormAuto = false;
 					}
 
 			}
@@ -60,7 +60,7 @@ $("#generate").click(function() {
 
 function generateForm(requirements, parameters, parametersKey, parametersValue) {
 	
-	if(generateFormValue) {
+	if(generateFormAuto) {
 		var form = "";
 	
 		form += "<html>\n";
