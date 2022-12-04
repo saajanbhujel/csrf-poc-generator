@@ -2,7 +2,7 @@
 
 This HTML file creates a CSRF PoC form to any HTTP request.
 
-<img src="/imgs/csrf.png"/>
+<img src="/imgs/csrf.png"/ width="750px">
 <!--<img src="http://g.recordit.co/aOgxzF9toA.gif"/>-->
 
 # To-Do 
