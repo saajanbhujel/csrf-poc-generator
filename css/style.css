@@ -8,12 +8,16 @@ body {
 }
 
 .page-header {
-    margin: 10px 0 20px;
+	margin: 10px 0 20px;
 }
 
 .new-container-fluid {
-    padding-bottom: 20px;
-    display: flex;
+	padding-bottom: 20px;
+	display: flex;
+}
+
+.radioBorder {
+	padding-right: 50px;
 }
 
 .github-corner {
