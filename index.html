@@ -55,12 +55,8 @@
 						</div>
 						<div class="panel-body" style="padding:0">
 							<textarea style="border:none; background-color: white; padding:10px; width:100%; height:400px" placeholder="PoC will be here." id="poc" spellcheck="false" oninput="update(this.value); sync_scroll(this);" onscroll="sync_scroll(this);" onkeydown="check_tab(this, event);"></textarea>
-							<!--my test-->
-							<pre id="highlighting" aria-hidden="true" style="border-radius:unset;margin: 0 0 4px;">
-							<code class="language-html" id="highlighting-content">&lt;span title=&quot;Start Typing&quot;&gt;Just start typing!&lt;/span&gt;</code>
-							</pre>
-
 						</div>
+						<div id=myDiv>&lt;p&gt;Hello world!&lt;/p&gt;</div>
 						<div class="panel-footer">
 							<button type="button" class="btn btn-success" id="copy" data-clipboard-target="#poc">Copy It</button>
 							<button type="button" class="btn btn-success" id="save">Save as HTML</button>
@@ -87,7 +83,7 @@
 		</div>
 	    <script src="js/generate.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
-		<script>w3CodeColor(document.getElementById("highlighting-content"));
+		<script>w3CodeColor(document.getElementById("myDiv"));
 
 function w3CodeColor(elmnt, mode) {
   var lang = (mode || "html");
