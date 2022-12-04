@@ -77,9 +77,9 @@ body {
 }
 #poc, #highlighting, #highlighting * {
   /* Also add text styles to highlighing tokens */
-  font-size: inherit; /*15pt;*/
-  font-family: inherit /*monospace;*/
-  line-height: inherit /*20pt;*/
+  /*font-size: inherit; 15pt;
+  font-family: inherit monospace;
+  line-height: inherit 20pt;*/
   tab-size: 2;
 }
 
@@ -136,14 +136,14 @@ https://prismjs.com/download.html#themes=prism-funky&languages=markup */
 
 code[class*="language-"],
 pre[class*="language-"] {
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-size: 1em;
+  /*font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 1em;*/
   text-align: left;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-  line-height: 1.5;
+  /*line-height: 1.5;*/
 
   -moz-tab-size: 4;
   -o-tab-size: 4;
