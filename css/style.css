@@ -8,12 +8,13 @@ body {
 }
 
 .page-header {
-	margin: 10px 0 20px;
+	margin: 10px 0 15px;
 }
 
 .new-container-fluid {
-	padding-bottom: 20px;
+	padding-bottom: 15px;
 	display: flex;
+	padding-left: 0;
 }
 
 .radioBorder {
